@@ -1,0 +1,8 @@
+<div>
+    <form-response :name="requiredString" :id="id">
+        <component :disabled="disabled" v-if="type && type == 'slug'" :is="'input-' + type" :model.sync="model" :id="id" :type="slugType" :from.sync="from"></component>
+        <component :disabled="disabled" v-if="type && type == 'select'" :options="[{ value: 'text', name: 'Text' }, { value: 'image', name: 'Image' }, { value: 'color', name: 'Color' }]" :is="'input-' + type" :model.sync="model" :id="id"></component>
+        <component :disabled="disabled" v-if="type && type != 'slug' && type != 'select'" :is="'input-' + type" :model.sync="model" :id="id"></component>
+        <!-- <slug :is="type" :model.sync="model" :id="id" :from="from"></slug> -->
+    </form-response>
+</div>

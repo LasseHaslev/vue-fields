@@ -1,0 +1,9 @@
+<div class="Position--relative">
+    <slot></slot>
+    <i :center-x="x" :center-y="y" class="Coordinates__item fa fa-eye Position--absolute" draggable="true" :style="{
+            top: positionY + '%',
+            left: positionX + '%',
+            'margin-left': pointItemOffset.x + 'px',
+            'margin-top': pointItemOffset.y + 'px',
+        }"></i>
+</div>

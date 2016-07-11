@@ -1,0 +1,17 @@
+<div>
+    <modal v-ref:modal>
+        <div class="Margin__bottom">
+            <partial name="picker"></partial>
+        </div>
+        <a class="Button Button--primary" href="#" @click.prevent="confirm">Confirm</a>
+        <a class="Button Button--default" href="#" @click.prevent="cancel">Cancel</a>
+    </modal>
+
+    <a style="display:block;" href="#" @click.prevent="open()" class="Padding--micro" style="border: 1px solid #CCC;">
+        <div class="Padding"
+        :style="{
+            'background-color': model
+        }">
+        </div>
+    </a>
+</div>
