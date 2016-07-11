@@ -1,8 +1,8 @@
 # @lassehaslev/vue-fields
 
-> Inputfields to use with vuejs
+> Input fields to use with vuejs
 
-## Build Setup
+## Development
 
 ``` bash
 # install dependencies
