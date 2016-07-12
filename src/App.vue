@@ -24,7 +24,7 @@ export default {
         return {
 
             colorPicker: '#005599',
-            grayscalePicker: '#000000',
+            grayscalePicker: '#555555',
 
         }
     },
