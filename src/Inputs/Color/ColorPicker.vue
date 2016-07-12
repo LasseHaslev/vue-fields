@@ -9,6 +9,8 @@ $color-picker-border = 1px solid #CCC;
         display:block;
         border: $color-picker-border;
         padding: 4px;
+        &__content
+            padding: 16px;
     &__display
         width: 50%;
         &__content
@@ -87,7 +89,7 @@ $color-picker-border = 1px solid #CCC;
     </modal>
 
     <a href="#" @click.prevent="open()" class="ColorPicker__input">
-        <div class="Padding" style="padding: 16px;" :style="{
+        <div class="ColorPicker__input__content" :style="{
             'background-color': model
         }">
         </div>
