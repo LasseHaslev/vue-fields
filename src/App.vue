@@ -14,9 +14,19 @@
         <grayscale-picker :model.sync="grayscalePicker"></grayscale-picker>
 
         <h3>Slug</h3>
-        <pre>Value: {{ slug }}</pre>
+        <p>Slug watches another text field and creates a slug based on the pattern. Slug has for now two logics "case" and "dash". When slug field is written into, we cut the connection to the leader.</p>
+        <p>Try to write in the input below:</p>
         <input type="text" v-model="slugFrom">
-        <slug :from="slugFrom" :model.sync="slug"></slug>
+        <div style="display:flex;">
+            <div style="width: 50%; margin-right:16px;">
+                <h4>Case</h4>
+                <slug :from="slugFrom" :model.sync="slug"></slug>
+            </div>
+            <div style="width: 50%">
+                <h4>Dash</h4>
+                <slug :from="slugFrom" type="dash" :model.sync="''"></slug>
+            </div>
+        </div>
     </div>
 </template>
 
