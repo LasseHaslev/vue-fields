@@ -8,17 +8,23 @@
         <h3>Color picker</h3>
         <pre>Value: {{ colorPicker }}</pre>
         <color-picker :model.sync="colorPicker"></color-picker>
+
+        <h3>Grayscale picker</h3>
+        <pre>Value: {{ grayscalePicker }}</pre>
+        <grayscale-picker :model.sync="grayscalePicker"></grayscale-picker>
     </div>
 </template>
 
 <script>
 import ColorPicker from './Inputs/Color/ColorPicker.vue';
+import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
 export default {
     
     data() {
         return {
 
             colorPicker: '#005599',
+            grayscalePicker: '#000000',
 
         }
     },
@@ -26,6 +32,7 @@ export default {
     components: {
 
         ColorPicker,
+        GrayscalePicker,
 
     }
 }
