@@ -4,6 +4,13 @@
 
 ## Development
 
+#### Quick start
+Clones repository and install dependencies
+``` bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/LasseHaslev/vue-fields/master/install.sh)"
+```
+
+#### Next time
 ``` bash
 # install dependencies
 npm install
