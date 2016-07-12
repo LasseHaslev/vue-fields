@@ -27,6 +27,12 @@
                 <slug :from="slugFrom" type="dash" :model.sync="''"></slug>
             </div>
         </div>
+
+        <h3>Coordinates</h3>
+        <pre>Value: {{ coordinates | json }}</pre>
+        <coordinates :model.sync="coordinates">
+            <div style="height:200px;background-color:#CCC;"></div>
+        </coordinates>
     </div>
 </template>
 
@@ -34,6 +40,7 @@
 import ColorPicker from './Inputs/Color/ColorPicker.vue';
 import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
 import Slug from './Inputs/Slug.vue';
+import Coordinates from './Inputs/Coordinates.vue';
 export default {
     
     data() {
@@ -44,6 +51,11 @@ export default {
             slugFrom: 'Hello world',
             slug: null,
 
+            coordinates: {
+                x: 0,
+                y: 0,
+            },
+
         }
     },
 
@@ -52,6 +64,7 @@ export default {
         ColorPicker,
         GrayscalePicker,
         Slug,
+        Coordinates,
 
     }
 }
