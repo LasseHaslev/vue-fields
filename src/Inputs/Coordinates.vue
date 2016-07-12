@@ -21,20 +21,10 @@
 </template>
 
 <script>
+import InputMixin from '../Mixins/Input';
 export default {
 
-    props: {
-
-        x: {
-            type: Number,
-            default: 0,
-        },
-        y: {
-            type: Number,
-            default: 0,
-        },
-
-    },
+    mixins: [ InputMixin ],
 
     data() {
         return {
@@ -50,10 +40,10 @@ export default {
     computed: {
 
         positionX() {
-            return this.valueToPercentage( this.x ) * 100;
+            return this.valueToPercentage( this.model.x ) * 100;
         },
         positionY() {
-            return this.valueToPercentage( this.y ) * 100;
+            return this.valueToPercentage( this.model.y ) * 100;
         },
 
     },
@@ -71,8 +61,8 @@ export default {
     methods: {
         setPosition( evt ) {
             // console.log(evt);
-            var newPositionX = this.$el.clientWidth * this.valueToPercentage( this.x ) + evt.offsetX;
-            var newPositionY = this.$el.clientHeight * this.valueToPercentage( this.y ) + evt.offsetY;
+            var newPositionX = this.$el.clientWidth * this.valueToPercentage( this.model.x ) + evt.offsetX;
+            var newPositionY = this.$el.clientHeight * this.valueToPercentage( this.model.y ) + evt.offsetY;
 
             // newPositionX += this.pointItemOffset.x * 2;
             newPositionY += this.pointItemOffset.y * 2;
@@ -82,8 +72,8 @@ export default {
 
             // console.log([ this.$el.clientWidth, newPositionX, percentageX ]);
 
-            this.$set( 'x', this.clampValue( this.percentageToValue( percentageX ), -1, 1 ) );
-            this.$set( 'y', this.clampValue( this.percentageToValue( percentageY ), -1, 1 ) );
+            this.$set( 'model.x', this.clampValue( this.percentageToValue( percentageX ), -1, 1 ) );
+            this.$set( 'model.y', this.clampValue( this.percentageToValue( percentageY ), -1, 1 ) );
         },
 
         // calculate -1 to 0 | 0 to .5 | 1 to 1
