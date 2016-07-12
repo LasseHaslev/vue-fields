@@ -12,12 +12,18 @@
         <h3>Grayscale picker</h3>
         <pre>Value: {{ grayscalePicker }}</pre>
         <grayscale-picker :model.sync="grayscalePicker"></grayscale-picker>
+
+        <h3>Slug</h3>
+        <pre>Value: {{ slug }}</pre>
+        <input type="text" v-model="slugFrom">
+        <slug :from="slugFrom" :model.sync="slug"></slug>
     </div>
 </template>
 
 <script>
 import ColorPicker from './Inputs/Color/ColorPicker.vue';
 import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
+import Slug from './Inputs/Slug.vue';
 export default {
     
     data() {
@@ -25,6 +31,8 @@ export default {
 
             colorPicker: '#005599',
             grayscalePicker: '#555555',
+            slugFrom: 'Hello world',
+            slug: null,
 
         }
     },
@@ -33,6 +41,7 @@ export default {
 
         ColorPicker,
         GrayscalePicker,
+        Slug,
 
     }
 }

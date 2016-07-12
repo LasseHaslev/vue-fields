@@ -1,13 +1,33 @@
-module.exports = {
+<style>
+.Slug {
+    display: block;
+    width: 100%;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px;
+    box-sizing: border-box;
+    margin-bottom: 12px
+}
+</style>
 
-    template: require( './slug.template.html' ),
+<template>
+<div>
+    <input :disabled="disabled" v-model="model" id="data.slug" class="Slug" type="text"
+        @focus="onFocus"
+        @blur="onBlur">
+</div>
+</template>
+
+<script>
+import InputMixin from '../Mixins/Input';
+
+export default {
+
+    mixins: [ InputMixin ],
 
     props: {
-        model: {
-            twoWay: String,
-            // type: String,
-            // default: null,
-        },
+
         from: {
             type: String,
             default: null,
@@ -17,11 +37,6 @@ module.exports = {
             type: String,
             default: 'case',
         },
-
-        disabled: {
-            type: Boolean,
-            default: false,
-        }
 
     },
 
@@ -52,6 +67,9 @@ module.exports = {
 
         // Set watchers
         this.setWatchers();
+
+        // Trigger watch one time to make it
+        this.onLeadType();
     },
 
     methods: {
@@ -130,3 +148,4 @@ module.exports = {
     }
 
 }
+</script>
