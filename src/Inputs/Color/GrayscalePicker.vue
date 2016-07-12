@@ -1,16 +1,16 @@
 <style lang="stylus">
 $color-picker-border = 1px solid #CCC;
-.ColorPicker
+.GrayscalePicker
     &__input
         display:block;
         border: $color-picker-border;
         padding: 4px;
         &__content
-            padding: 16px;
+            padding: 8px 16px 8px;
 </style>
 <template>
-<div @click.prevent="open()" class="ColorPicker__input">
-    <div class="ColorPicker__input__content" :style="{
+<div @click.prevent="open()" class="GrayscalePicker__input">
+    <div class="GrayscalePicker__input__content" :style="{
         'background-color': model
     }">
     </div>
