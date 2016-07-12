@@ -6,13 +6,22 @@
         <p>Main concept is you give a :model="" with the data the same way you would use v-model="" on normal input element</p>
 
         <h3>Color picker</h3>
-        <color-picker :model="'#005599'"></color-picker>
+        <pre>Value: {{ colorPicker }}</pre>
+        <color-picker :model.sync="colorPicker"></color-picker>
     </div>
 </template>
 
 <script>
 import ColorPicker from './Inputs/Color/ColorPicker.vue';
 export default {
+    
+    data() {
+        return {
+
+            colorPicker: '#005599',
+
+        }
+    },
 
     components: {
 
