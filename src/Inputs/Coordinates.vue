@@ -16,7 +16,7 @@
             left: positionX + '%',
             'margin-left': pointItemOffset.x + 'px',
             'margin-top': pointItemOffset.y + 'px',
-        }">test</i>
+        }">X</i>
 </div>
 </template>
 
