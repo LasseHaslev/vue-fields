@@ -35,26 +35,27 @@
         </coordinates>
 
         <h3>Image picker</h3>
+        Image picker is based on <a href="https://github.com/lassehasleV/vue-imagepicker">@lassehaslev/vue-imagepicker</a>. All properties to the imagepicker goes through :options parameters.
         <pre>Value: {{ image | json }}</pre>
         <div style="width: 33%">
             <image-picker :model.sync="image" :options="{
             'images': [
-            {
-            id: 1,
-            path: 'http://placehold.it/400x400',
-            },
-            {
-            id: 2,
-                path: 'http://placehold.it/800x400',
-            },
-            {
-            id: 3,
-            path: 'http://placehold.it/400x400',
-            },
-            {
-            id: 4,
-            path: 'http://placehold.it/200x400',
-            },
+                {
+                    id: 1,
+                    path: 'http://placehold.it/400x400',
+                },
+                {
+                    id: 2,
+                    path: 'http://placehold.it/800x400',
+                },
+                {
+                    id: 3,
+                    path: 'http://placehold.it/400x400',
+                },
+                {
+                    id: 4,
+                    path: 'http://placehold.it/200x400',
+                },
             ]
             }"></image-picker>
         </div>
