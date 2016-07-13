@@ -42,7 +42,7 @@ export default {
 
         // Force set the values we are following
         if ( ! this.options.from ) {
-            this.$set( 'from', '' );
+            this.$set( 'options.from', '' );
         }
         if ( ! this.model ) {
             this.$set( 'model', '' );

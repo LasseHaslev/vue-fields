@@ -7,11 +7,11 @@
 
         <h3>Color picker</h3>
         <pre>Value: {{ colorPicker }}</pre>
-        <color-picker :model.sync="colorPicker"></color-picker>
+        <input-field type="color" :model.sync="colorPicker"></input-field>
 
         <h3>Grayscale picker</h3>
         <pre>Value: {{ grayscalePicker }}</pre>
-        <grayscale-picker :model.sync="grayscalePicker"></grayscale-picker>
+        <input-field type="grayscale" :model.sync="grayscalePicker"></input-field>
 
         <h3>Slug</h3>
         <p>Slug watches another text field and creates a slug based on the pattern. Slug has for now two logics "case" and "dash". When slug field is written into, we cut the connection to the leader.</p>
@@ -20,25 +20,25 @@
         <div style="display:flex;">
             <div style="width: 50%; margin-right:16px;">
                 <h4>Case</h4>
-                <slug :from="slugFrom" :model.sync="slug"></slug>
+                <input-field type="slug" :options="{ from:slugFrom }" :model.sync="slug"></input-field>
             </div>
             <div style="width: 50%">
                 <h4>Dash</h4>
-                <slug :from="slugFrom" type="dash" :model.sync="''"></slug>
+                <input-field type="slug" :options="{ from:slugFrom, type:'dash' }" :model.sync="''"></input-field>
             </div>
         </div>
 
         <h3>Coordinates</h3>
         <pre>Value: {{ coordinates | json }}</pre>
-        <coordinates :model.sync="coordinates">
+        <input-field type="coordinates" :model.sync="coordinates">
             <div style="height:200px;background-color:#CCC;"></div>
-        </coordinates>
+        </input-field>
 
         <h3>Image picker</h3>
         Image picker is based on <a href="https://github.com/lassehasleV/vue-imagepicker">@lassehaslev/vue-imagepicker</a>. All properties to the imagepicker goes through :options parameters.
         <pre>Value: {{ image | json }}</pre>
         <div style="width: 33%">
-            <image-picker :model.sync="image" :options="{
+            <input-field type="image-picker" :model.sync="image" :options="{
             'images': [
                 {
                     id: 1,
@@ -57,7 +57,7 @@
                     path: 'http://placehold.it/200x400',
                 },
             ]
-            }"></image-picker>
+            }"></input-field>
         </div>
     </div>
 </template>
@@ -68,6 +68,9 @@ import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
 import Slug from './Inputs/Slug.vue';
 import Coordinates from './Inputs/Coordinates.vue';
 import ImagePicker from './Inputs/ImagePicker.vue';
+
+import InputField from './InputField.vue'
+
 export default {
     
     data() {
@@ -95,6 +98,8 @@ export default {
         Slug,
         Coordinates,
         ImagePicker,
+
+        InputField,
 
     }
 }
