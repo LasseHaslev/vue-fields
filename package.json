@@ -1,6 +1,6 @@
 {
   "name": "@lassehaslev/vue-fields",
-  "description": "Inputfields to use with vuejs",
+  "description": "Special input fields for vuejs",
   "author": "Lasse S. Haslev <lasse@haslev.no>",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
