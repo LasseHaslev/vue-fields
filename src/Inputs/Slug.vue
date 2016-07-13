@@ -26,20 +26,6 @@ export default {
 
     mixins: [ InputMixin ],
 
-    props: {
-
-        from: {
-            type: String,
-            default: null,
-        },
-
-        type: {
-            type: String,
-            default: 'case',
-        },
-
-    },
-
     data: function() {
         return {
             // model: null,
@@ -55,7 +41,7 @@ export default {
     ready: function() {
 
         // Force set the values we are following
-        if ( ! this.from ) {
+        if ( ! this.options.from ) {
             this.$set( 'from', '' );
         }
         if ( ! this.model ) {
@@ -92,7 +78,7 @@ export default {
 
         // Handle type in the field we are watching
         onLeadType: function() {
-            // console.log('LeadType: ' + this.from);
+            // console.log('LeadType: ' + this.options.from);
             if ( this.shouldFollowLead ) {
                 this.convertToSlug();
             }
@@ -100,15 +86,15 @@ export default {
 
         // Convert to the slug from the field we are following
         convertToSlug: function() {
-            switch (this.type) {
+            switch (this.options.type) {
                 case 'dash':
-                    var str = this.from.toLowerCase()
+                    var str = this.options.from.toLowerCase()
                         .replace(/[^\w ]+/g,'')
                         .replace(/ +/g,'-');
                     break;
                 
                 default:
-                    var str = this.from.toLowerCase().replace(/([^a-z])([a-z])(?=[a-z]{0})|^([a-z])/g, function(_, g1, g2, g3) {
+                    var str = this.options.from.toLowerCase().replace(/([^a-z])([a-z])(?=[a-z]{0})|^([a-z])/g, function(_, g1, g2, g3) {
                         return (typeof g1 === 'undefined') ? g3.toUpperCase() : g1 + g2.toUpperCase();
                     } )
                         .replace( /[^\w ]/, '' )
@@ -119,14 +105,14 @@ export default {
             }
 
             // console.log(words);
-            // var str = this.from.toLowerCase().replace(/([^a-z]|^)([a-z])(?=[a-z]{2})/g, function(_, g1, g2) {
+            // var str = this.options.from.toLowerCase().replace(/([^a-z]|^)([a-z])(?=[a-z]{2})/g, function(_, g1, g2) {
                 // return g1 + g2.toUpperCase();
             // } );
-            // var str = this.from.toLowerCase().replace(/([^a-z])([a-z])(?=[a-z]{2})|^([a-z])/g, function(_, g1, g2, g3) {
+            // var str = this.options.from.toLowerCase().replace(/([^a-z])([a-z])(?=[a-z]{2})|^([a-z])/g, function(_, g1, g2, g3) {
                 // return (typeof g1 === 'undefined') ? g3.toUpperCase() : g1 + g2.toUpperCase();
             // } );
             this.$set( 'model', str );
-            // var newText = this.from.toLowerCase()
+            // var newText = this.options.from.toLowerCase()
                 // .replace(/[^\w ]+/g,'')
                 // .replace(/ +/g,'-');
             // this.$set( 'model', newText );
@@ -135,7 +121,7 @@ export default {
         // Set the watchers for the input types
         setWatchers: function() {
 
-            this.leadWatchObject = this.$watch( 'from', function() {
+            this.leadWatchObject = this.$watch( 'options.from', function() {
                 this.onLeadType();
             } );
 
