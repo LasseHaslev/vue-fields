@@ -63,13 +63,7 @@
 </template>
 
 <script>
-import ColorPicker from './Inputs/Color/ColorPicker.vue';
-import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
-import Slug from './Inputs/Slug.vue';
-import Coordinates from './Inputs/Coordinates.vue';
-import ImagePicker from './Inputs/ImagePicker.vue';
-
-import InputField from './InputField.vue'
+import InputField from './InputField'
 
 export default {
     
@@ -92,12 +86,6 @@ export default {
     },
 
     components: {
-
-        ColorPicker,
-        GrayscalePicker,
-        Slug,
-        Coordinates,
-        ImagePicker,
 
         InputField,
 

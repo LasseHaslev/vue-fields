@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { ImagePickerInstall } from '@lassehaslev/vue-imagepicker'
+import { FieldsInstall } from './InputField'
 
-Vue.use( ImagePickerInstall );
+Vue.use( FieldsInstall );
 
 new Vue({
   el: 'body',

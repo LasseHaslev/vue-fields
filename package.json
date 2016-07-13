@@ -2,6 +2,7 @@
   "name": "@lassehaslev/vue-fields",
   "description": "Special input fields for vuejs",
   "author": "Lasse S. Haslev <lasse@haslev.no>",
+  "main": "src/InputField.js",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "serve": "http-server -c 1 -a localhost",

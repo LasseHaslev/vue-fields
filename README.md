@@ -6,7 +6,24 @@ Vue input fields contains special input fields to use width [ vuejs ]( http://vu
 ## Installation
 Run ```npm install @lassehaslev/vue-fields --save``` in your project folder
 
+Install component where register Vue
+``` html
+import Vue from 'vue'
+import { FieldsInstall } from '@lassehaslev/vue-fields'
+Vue.use( FieldsInstall );
+```
+
 ## Usage
+To start using the field make use of it in your components
+``` js
+import InputField from '@lassehaslev/vue-fields';
+export default {
+    template: '<input-field :model=""></input-field>',
+    components: {
+        InputField,
+    }
+}
+```
 The input fields in this package should be used the same way as you would use normal inputfields with [vuejs](http://vuejs.org/).
 Main concept is that you give a :model="" with the data the same way you would use v-model="" on a normal input element.
 
