@@ -33,6 +33,31 @@
         <coordinates :model.sync="coordinates">
             <div style="height:200px;background-color:#CCC;"></div>
         </coordinates>
+
+        <h3>Image picker</h3>
+        <pre>Value: {{ image | json }}</pre>
+        <div style="width: 33%">
+            <image-picker :model.sync="image" :options="{
+            'images': [
+            {
+            id: 1,
+            path: 'http://placehold.it/400x400',
+            },
+            {
+            id: 2,
+                path: 'http://placehold.it/800x400',
+            },
+            {
+            id: 3,
+            path: 'http://placehold.it/400x400',
+            },
+            {
+            id: 4,
+            path: 'http://placehold.it/200x400',
+            },
+            ]
+            }"></image-picker>
+        </div>
     </div>
 </template>
 
@@ -41,6 +66,7 @@ import ColorPicker from './Inputs/Color/ColorPicker.vue';
 import GrayscalePicker from './Inputs/Color/GrayscalePicker.vue';
 import Slug from './Inputs/Slug.vue';
 import Coordinates from './Inputs/Coordinates.vue';
+import ImagePicker from './Inputs/ImagePicker.vue';
 export default {
     
     data() {
@@ -56,6 +82,8 @@ export default {
                 y: 0,
             },
 
+            image: null,
+
         }
     },
 
@@ -65,6 +93,7 @@ export default {
         GrayscalePicker,
         Slug,
         Coordinates,
+        ImagePicker,
 
     }
 }

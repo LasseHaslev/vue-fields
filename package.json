@@ -9,6 +9,7 @@
     "build": "cross-env NODE_ENV=production browserify src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
   },
   "dependencies": {
+    "@lassehaslev/vue-imagepicker": "^0.1.7",
     "vue": "^1.0.0",
     "vue-modal-browserify": "^0.8.17"
   },
