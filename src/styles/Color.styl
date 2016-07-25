@@ -1,0 +1,40 @@
+$color-picker-border = 1px solid #CCC;
+
+// Grayscale picker
+.GrayscalePicker
+    &__input
+        display:block;
+        border: $color-picker-border;
+        padding: 4px;
+        &__content
+            padding: 8px 16px 8px;
+// Color slider
+.ColorSlider
+    width:99.7%
+// Color picker
+.ColorPicker
+    &__content
+        display:flex
+        margin-bottom: 16px
+    // @extends .Clearfix
+    &__input
+        display:block;
+        border: $color-picker-border;
+        padding: 4px;
+        &__content
+            padding: 16px;
+    &__display
+        width: 50%;
+        &__content
+            padding: 4px;
+            border: $color-picker-border;
+    &__controls
+        margin: 0 0 0 16px;
+        width:50%;
+
+    &__control
+        &__label
+            display: block
+            margin-bottom: 4px
+        &__input
+            margin-top: 8px

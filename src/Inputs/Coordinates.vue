@@ -1,13 +1,3 @@
-<style lang="stylus">
-.Coordinates
-    position:relative
-    &__item
-        position:absolute
-        padding: 6px;
-        background-color: rgba( 255,255,255,.8 )
-        border-radius: 50%
-</style>
-
 <template>
 <div class="Coordinates">
     <slot></slot>

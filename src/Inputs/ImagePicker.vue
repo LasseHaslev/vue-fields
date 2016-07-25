@@ -1,13 +1,3 @@
-<style lang="stylus">
-.InputImagePicker
-    &__Image__content
-        width: 100%;
-        background-color: gray
-        background-size:contain
-        background-position:center center
-        background-repeat: no-repeat
-        padding-bottom: 100%;
-</style>
 <template>
     <image-picker :selected="model"
         :models="options.images"

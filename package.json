@@ -5,15 +5,15 @@
   "main": "src/InputField.js",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
-    "serve": "http-server -c 1 -a localhost",
-    "dev": "npm-run-all --parallel watchify serve style-watch",
+    "serve": "http-server -o -c 1 -a localhost",
+    "dev": "npm-run-all --parallel watchify style-watch serve",
     "build": "cross-env NODE_ENV=production browserify src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
-    "style": "stylus -c src/styles/ImagePicker.styl -o dist/",
-    "style-watch": "stylus -w -c src/styles/ImagePicker.styl -o dist/",
+    "style": "stylus -c src/styles/Fields.styl -o dist/",
+    "style-watch": "stylus -w -c src/styles/Fields.styl -o dist/",
     "prepublish": "npm run build; npm run style;"
   },
   "dependencies": {
-    "@lassehaslev/vue-imagepicker": "^0.1.7",
+    "@lassehaslev/vue-imagepicker": "^0.2.0",
     "vue": "^1.0.0",
     "vue-modal-browserify": "^0.8.17"
   },

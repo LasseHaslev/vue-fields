@@ -1,7 +1,3 @@
-<style lang="stylus">
-.ColorSlider
-    width:99.7%
-</style>
 <template>
     <input class="ColorSlider" type="range" v-model="rgbValue" :min="0" :max="255" step="1">
 </template>
