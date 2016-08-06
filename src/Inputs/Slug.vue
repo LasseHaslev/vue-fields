@@ -1,16 +1,3 @@
-<style>
-.Slug {
-    display: block;
-    width: 100%;
-    font-size: 0.9em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 9px;
-    box-sizing: border-box;
-    margin-bottom: 12px
-}
-</style>
-
 <template>
 <div>
     <input :disabled="disabled" v-model="model" id="data.slug" class="Slug" type="text"
