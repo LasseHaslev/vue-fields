@@ -14,6 +14,11 @@ Vue.use( FieldsInstall );
 ```
 
 ## Usage
+
+#### Styles
+Styles can be found compiled in ```dist/Fields.css```. Or you can compile your own from ```src/styles/*```. We use [Stylus](http://stylus-lang.com/) to compile the styles.
+
+#### Code
 To start using the field make use of it in your components
 ``` js
 import InputField from '@lassehaslev/vue-fields';
